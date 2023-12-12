@@ -47,7 +47,8 @@ def display_slider(element, label, key):
     """Displays a slider UI element."""
     min_value = int(element.attrib.get('min_value', 0))
     max_value = int(element.attrib.get('max_value', 100))
-    st.slider(label, min_value, max_value, key=key)
+    slider_value = st.slider(label, min_value, max_value, key=key)
+    st.session_state.user_inputs[label] = slider_value
 
 def display_multiselect(element, label, key):
     """Displays a multi-select UI element."""
