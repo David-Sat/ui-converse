@@ -1,60 +1,59 @@
 import streamlit as st
-import xml.etree.ElementTree as ET
-from io import StringIO
+import json
 
 def display_ui_from_response(response, message_index):
-    markdown_part, ui_part = extract_parts(response)
-    display_markdown(markdown_part)
-    if ui_part:
-        display_ui_elements(ui_part, message_index)
-
-def extract_parts(response):
-    """Extracts Markdown and UI parts from the response."""
-    if "<ui>" in response:
-        markdown_part, ui_part = response.split("<ui>", 1)
-        ui_part = ui_part.split("</ui>", 1)[0]
-    else:
-        markdown_part, ui_part = response, ""
-    return markdown_part, ui_part
+    data = json.loads(response)
+    try:
+        data = json.loads(response)
+        print("Parsed JSON:", data)
+        display_markdown(data["title"])
+        display_markdown(data["full_answer"])
+        if "ui_elements" in data:
+            for index, element in enumerate(data["ui_elements"]):
+                display_ui_element(element, message_index, index)
+    except json.JSONDecodeError:
+        display_markdown(response)
 
 
 def display_markdown(markdown_part):
     """Displays the Markdown part of the response."""
     st.markdown(markdown_part)
 
-def display_ui_elements(ui_part, message_index):
-    """Parses and displays UI elements from the UI part of the response."""
-    ui_xml = f"<root>{ui_part}</root>"
-    root = ET.parse(StringIO(ui_xml)).getroot()
-    for index, element in enumerate(root):
-        display_ui_element(element, message_index, index)
-
 def display_ui_element(element, message_index, index):
-    """Displays a single UI element based on its tag and attributes."""
-    label = element.attrib.get('label', '')
-    key = f"{element.tag}_{label}_{message_index}_{index}"
+    """Displays a single UI element based on its type and attributes."""
+    label = element.get('label', '')
+    key = f"{element['type']}_{label}_{message_index}_{index}"
 
-    if element.tag == 'slider':
+    print(f"Displaying UI element: {element['type']} - {element.get('label', '')}")
+
+    if element['type'] == 'Slider':
         display_slider(element, label, key)
-    elif element.tag == 'multiSelect':
+    elif element['type'] == 'RadioButtons':
+        display_radio_buttons(element, label, key)
+    elif element['type'] == 'MultiSelect':
         display_multiselect(element, label, key)
-    elif element.tag == 'textInput':
+    elif element['type'] == 'TextInput':
         display_text_input(label, key)
-
-
 
 def display_slider(element, label, key):
     """Displays a slider UI element."""
-    min_value = int(element.attrib.get('min_value', 0))
-    max_value = int(element.attrib.get('max_value', 100))
+    min_value, max_value = element.get('range', [0, 100])
     slider_value = st.slider(label, min_value, max_value, key=key)
     st.session_state.user_inputs[label] = slider_value
 
+def display_radio_buttons(element, label, key):
+    """Displays radio buttons UI element."""
+    options = element.get('options', [])
+    selected_option = st.radio(label, options, key=key)
+    st.session_state.user_inputs[label] = selected_option
+
 def display_multiselect(element, label, key):
     """Displays a multi-select UI element."""
-    options = [opt.text for opt in element]
-    st.multiselect(label, options, key=key)
+    options = element.get('options', [])
+    selected_options = st.multiselect(label, options, key=key)
+    st.session_state.user_inputs[label] = selected_options
 
 def display_text_input(label, key):
     """Displays a text input UI element."""
-    st.text_input(label, key=key)
+    text_value = st.text_input(label, key=key)
+    st.session_state.user_inputs[label] = text_value

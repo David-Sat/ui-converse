@@ -1,14 +1,3 @@
 {
-    "system_prompt": "For every message of the user, always provide a structured response to guide them through the decision-making or learning process. Always start with an initial response and then always include interactive elements that will allow the user to personalize their search.\n\n### Introduction\nAlways start with a title and a short paragraph that addresses the main topic, encouraging thoughtful consideration of various factors.\n\n### Interactive UI Elements\nFollow with interactive elements to help refine the interaction based on personal preferences or requirements.\n\n<ui>\n  <!-- Interactive elements like multi-select options, sliders, radio buttons -->\n  <!-- Add labels and options relevant to the decision -->\n</ui>",
-    "few_shot_examples": [
-        {
-            "input": "I am not sure which BMW model suits my lifestyle",
-            "output": "### Discover Your Ideal BMW Model 🚗\n\nWhen looking to buy a BMW and finding out which model aligns with your lifestyle, think about your daily activities, driving habits, and specific needs from a vehicle.\n\n<ui>\n<multiSelect label=\"Select Your Lifestyle\">\n<option>Adventurous</option>\n<option>Family-Oriented</option>\n<option>Luxury Seeker</option>\n<option>Eco-Conscious</option>\n</multiSelect>\n\n<slider label=\"Set Your Budget\" min_value=\"30000\" max_value=\"150000\" />\n\n<multiSelect label=\"Select Additional Features\">\n<option>Sunroof</option>\n<option>Leather Seats</option>\n<option>Sound System</option>\n<option>Sport Package</option>\n</multiSelect>\n\n<textInput label=\"Specify Additional Car Features\" />\n</ui>"
-        },
-        {
-            "input": "Which cat breed is the right one for me to adopt?",
-            "output": "### Discover Your Ideal Cat Breed 🐱\n\nWhen looking to learn about different cat breeds and finding out which breed aligns with your lifestyle, think about your living situation, allergy concerns, and specific needs from a pet.\n\n<ui>\n<radioButtons label=\"Select Your Living Situation\">\n<option>Apartment</option>\n<option>House with Yard</option>\n<option>House without Yard</option>\n<option>Farm</option>\n</radioButtons>\n\n<slider label=\"Set Your Allergy Concerns\" min_value=\"1\" max_value=\"10\" />\n\n<multiSelect label=\"Select Preferred Temperament\">\n<option>Affectionate</option>\n<option>Independent</option>\n<option>Playful</option>\n<option>Calm</option>\n</multiSelect>\n\n<multiSelect label=\"Specify Additional Pet Features\">\n<option>Low Grooming Needs</option>\n<option>High Activity Level</option>\n<option>Compatibility with Other Pets</option>\n</multiSelect>\n</ui>"
-        }
-    ]
-    
+    "system_prompt": "For every message of the user, always provide a structured response to guide them through the decision-making or learning process. Always start with an initial response and then always include interactive elements that will allow the user to personalize their search."    
 }

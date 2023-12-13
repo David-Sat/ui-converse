@@ -2,7 +2,6 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import ChatMessage
 from llm_utils.stream_handler import StreamHandler
-from llm_utils.ui_agent import get_mock_response, UIAgent
 from streamlit_utils.ui_creator import display_ui_from_response
 from llm_utils.chat import Chat
 
@@ -22,7 +21,8 @@ get_openai_api_key()
 chat_instance = Chat(st.session_state.openai_api_key, "gpt-3.5-turbo", streaming=True)
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
+    #st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
+    st.session_state["messages"] = []
 
 chat_container = st.container()
 

@@ -1,0 +1,56 @@
+[
+    {
+        "input": "I am not sure which BMW model suits my lifestyle",
+        "output": {
+            "title": "Discover Your Ideal BMW Model 🚗",
+            "full_answer": "When looking to buy a BMW and finding out which model aligns with your lifestyle, think about your daily activities, driving habits, and specific needs from a vehicle, including space, performance, and technology.",
+            "ui_elements": [
+                {
+                    "type": "RadioButtons",
+                    "label": "Select Your Lifestyle",
+                    "options": ["Adventurous", "Family-Oriented", "Luxury Seeker", "Eco-Conscious"]
+                },
+                {
+                    "type": "Slider",
+                    "label": "Set Your Budget",
+                    "range": [30000, 150000]
+                },
+                {
+                    "type": "MultiSelect",
+                    "label": "Select Additional Features",
+                    "options": ["Sunroof", "Leather Seats", "Sound System", "Sport Package"]
+                }
+            ]
+        }        
+    },
+    {
+        "input": "Which cat breed is the right one for me to adopt?",
+        "output": {
+            "title": "Discover Your Ideal Cat Breed 🐱",
+            "full_answer": "When looking to learn about different cat breeds and finding out which breed aligns with your lifestyle, think about your living situation, allergy concerns, and specific needs from a pet, including temperament, grooming needs, and activity level.",
+            "ui_elements": [
+                {
+                    "type": "RadioButtons",
+                    "label": "Select Your Living Situation",
+                    "options": ["Apartment", "House with Yard", "House without Yard", "Farm"]
+                },
+                {
+                    "type": "Slider",
+                    "label": "Set Your Allergy Concerns",
+                    "range": [1, 10]
+                },
+                {
+                    "type": "MultiSelect",
+                    "label": "Select Preferred Temperament",
+                    "options": ["Affectionate", "Independent", "Playful", "Calm"]
+                },
+                {
+                    "type": "MultiSelect",
+                    "label": "Specify Additional Pet Features",
+                    "options": ["Low Grooming Needs", "High Activity Level", "Compatibility with Other Pets"]
+                }
+            ]
+        }
+        
+    }
+]
