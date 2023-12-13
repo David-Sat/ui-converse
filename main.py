@@ -3,26 +3,15 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import ChatMessage
 from llm_utils.stream_handler import StreamHandler
 from streamlit_utils.ui_creator import display_ui_from_response
+from streamlit_utils.initialization import initialize_session
 from llm_utils.chat import Chat
 
 
-def get_openai_api_key():
-    if "openai_api_key" not in st.session_state:
-        if "openai_api_key" in st.secrets:
-            st.session_state["openai_api_key"] = st.secrets.openai_api_key
-        else:
-            st.session_state["openai_api_key"] = st.sidebar.text_input("OpenAI API Key", type="password")
-    if not st.session_state["openai_api_key"]:
-        st.info("Enter an OpenAI API Key to continue")
-        st.stop()
 
-get_openai_api_key()
+initialize_session()
 
 chat_instance = Chat(st.session_state.openai_api_key, "gpt-3.5-turbo", streaming=True)
 
-if "messages" not in st.session_state:
-    #st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
-    st.session_state["messages"] = []
 
 chat_container = st.container()
 
