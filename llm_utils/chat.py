@@ -38,8 +38,8 @@ class Chat:
             [
                 ("system", self.system_prompt),
                 few_shot_prompt,
-                ("human", "What is the ideal electric car for me?")
-            ] 
+            ]
+            + messages
         )
 
         return prompt
