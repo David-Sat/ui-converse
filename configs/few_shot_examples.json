@@ -51,6 +51,35 @@
                 }
             ]
         }
+    },
+    {
+        "input": "Desired Range (miles): 144 Charging Infrastructure: Well-Established Budget: 40741 Desired Features: ['Advanced Safety Features']",
+        "output": {
+            "title": "Preliminary Electric Vehicle Recommendation 🚘",
+            "full_answer": "Based on your specified range of 144 miles, well-established charging infrastructure, budget of $40,741, and interest in advanced safety features, a compact or midsize electric vehicle would be a suitable choice. These vehicles often offer the right balance of range, affordability, and safety. Brands like Nissan, Chevrolet, and certain models from Tesla could be good starting points. Now, let's refine your options further.",
+            "ui_elements": [
+                {
+                    "type": "MultiSelect",
+                    "label": "Preferred Brand",
+                    "options": ["Tesla", "Nissan", "Chevrolet", "BMW", "Audi", "Other"]
+                },
+                {
+                    "type": "Checkbox",
+                    "label": "Vehicle Type",
+                    "options": ["Sedan", "SUV", "Hatchback", "Truck", "Crossover"]
+                },
+                {
+                    "type": "RadioButtons",
+                    "label": "Interior Preferences",
+                    "options": ["Luxury", "Standard", "Eco-Friendly Materials"]
+                },
+                {
+                    "type": "Checkbox",
+                    "label": "Additional Features",
+                    "options": ["Heated Seats", "Panoramic Sunroof", "Enhanced Audio System", "Wireless Charging", "Hands-Free Tailgate", "Customizable Ambient Lighting"]
+                }
+            ]
+        }
         
     }
 ]
