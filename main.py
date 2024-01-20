@@ -5,6 +5,7 @@ from llm_utils.stream_handler import StreamHandler
 from streamlit_utils.ui_creator import display_ui_from_response
 from streamlit_utils.initialization import initialize_session
 from llm_utils.chat import Chat
+from llm_utils.prompt_assembly import prompt_assembly
 
 
 
@@ -31,8 +32,9 @@ with col2:
 
 with col1:
     if st.button("Submit", type="primary"):
-        if user_input:
-            st.session_state.messages.append(ChatMessage(role="user", content=user_input))
+        print("user inputs:", st.session_state.user_inputs)
+        user_prompt = prompt_assembly(st.session_state.user_inputs, user_input)
+        st.session_state.messages.append(ChatMessage(role="user", content=user_prompt))
 
         with st.chat_message("assistant"):
             stream_handler = StreamHandler(st.empty())

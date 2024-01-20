@@ -7,17 +7,17 @@
             "ui_elements": [
                 {
                     "type": "RadioButtons",
-                    "label": "Select Your Lifestyle",
+                    "label": "Lifestyle",
                     "options": ["Adventurous", "Family-Oriented", "Luxury Seeker", "Eco-Conscious"]
                 },
                 {
                     "type": "Slider",
-                    "label": "Set Your Budget",
+                    "label": "Budget",
                     "range": [30000, 150000]
                 },
                 {
                     "type": "MultiSelect",
-                    "label": "Select Additional Features",
+                    "label": "Additional Features",
                     "options": ["Sunroof", "Leather Seats", "Sound System", "Sport Package"]
                 }
             ]
@@ -31,22 +31,22 @@
             "ui_elements": [
                 {
                     "type": "RadioButtons",
-                    "label": "Select Your Living Situation",
+                    "label": "Living Situation",
                     "options": ["Apartment", "House with Yard", "House without Yard", "Farm"]
                 },
                 {
                     "type": "Slider",
-                    "label": "Set Your Allergy Concerns",
+                    "label": "Allergy Concerns",
                     "range": [1, 10]
                 },
                 {
                     "type": "MultiSelect",
-                    "label": "Select Preferred Temperament",
+                    "label": "Preferred Temperament",
                     "options": ["Affectionate", "Independent", "Playful", "Calm"]
                 },
                 {
                     "type": "MultiSelect",
-                    "label": "Specify Additional Pet Features",
+                    "label": "Additional Pet Features",
                     "options": ["Low Grooming Needs", "High Activity Level", "Compatibility with Other Pets"]
                 }
             ]
