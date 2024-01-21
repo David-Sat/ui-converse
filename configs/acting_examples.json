@@ -1,0 +1,50 @@
+[
+    {
+        "input": "Initial Answer: For a laptop suitable for both gaming and work, consider factors like high-performance graphics, a robust processor, sufficient RAM, and a balance between portability and screen size. Next Steps: Refine your query by specifying a preferred budget range, desired screen size (for example, 15-inch for portability or 17-inch for immersive gaming), and any specific software requirements for work.",
+        "output": {
+            "title": "Find Your Ideal Laptop for Gaming and Work",
+            "initial_answer": "To choose a laptop that's great for gaming and work, focus on high-performance graphics, a robust processor, and enough RAM. Tailor your choice based on budget, screen size, and software requirements.",
+            "ui_elements": [
+                {
+                    "type": "Slider",
+                    "label": "Budget",
+                    "range": [500, 3000]
+                },
+                {
+                    "type": "RadioButton",
+                    "label": "Screen Size",
+                    "options": ["13-inch", "15-inch", "17-inch"]
+                },
+                {
+                    "type": "Checkbox",
+                    "label": "Software Needs",
+                    "options": ["Office Suite", "Photo Editing", "Video Editing", "Gaming"]
+                }
+            ]
+        }
+    },
+    {
+        "input": "Initial Answer: Effective language learning combines methods like structured courses, immersion techniques, and practical usage. Next Steps: Specify particular languages of interest, your current proficiency level in these languages, and any specific goals (e.g., conversational fluency, business communication, or travel). Also, indicate your preferred learning style, such as visual, auditory, or kinesthetic.",
+        "output": {
+            "title": "Your Personalized Language Learning Journey",
+            "initial_answer": "A successful language learning strategy involves structured courses, immersive experiences, and practical usage. Detail your language preferences, current level, and specific learning goals for a customized approach.",
+            "ui_elements": [
+                {
+                    "type": "MultiSelect",
+                    "label": "Languages of Interest",
+                    "options": ["Spanish", "French", "German", "Mandarin", "Other"]
+                },
+                {
+                    "type": "Slider",
+                    "label": "Proficiency Level",
+                    "range": [1, 10]
+                },
+                {
+                    "type": "Checkbox",
+                    "label": "Learning Goals",
+                    "options": ["Conversational Fluency", "Business Communication", "Travel", "Cultural Understanding"]
+                }
+            ]
+        }        
+    }
+]

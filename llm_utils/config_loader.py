@@ -8,10 +8,19 @@ def load_few_shot_examples(examples_file):
     """
     examples_path = Path(__file__).parent.parent / examples_file
     examples = load_json(examples_path)
-    processed_examples = process_examples(examples)
+    return examples
+
+def load_few_shot_json_examples(examples_file):
+    """
+    Load few-shot examples from the specified JSON file and process them.
+    """
+    examples_path = Path(__file__).parent.parent / examples_file
+    examples = load_json(examples_path)
+    processed_examples = process_json_examples(examples)
     return processed_examples
 
-def process_examples(examples):
+
+def process_json_examples(examples):
     """
     Process the examples by converting the output to a JSON string.
     """

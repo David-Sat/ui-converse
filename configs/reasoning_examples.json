@@ -1,0 +1,14 @@
+[
+    {
+        "input": "I'm looking for a laptop that's good for both gaming and work.",
+        "output": "Initial Answer: For a laptop suitable for both gaming and work, consider factors like high-performance graphics, a robust processor, sufficient RAM, and a balance between portability and screen size. Next Steps: Refine your query by specifying a preferred budget range, desired screen size (for example, 15-inch for portability or 17-inch for immersive gaming), and any specific software requirements for work."
+    },
+    {
+        "input": "What's the best way to learn a new language?",
+        "output": "Initial Answer: Effective language learning combines methods like structured courses, immersion techniques, and practical usage. Next Steps: Specify particular languages of interest, your current proficiency level in these languages, and any specific goals (e.g., conversational fluency, business communication, or travel). Also, indicate your preferred learning style, such as visual, auditory, or kinesthetic."
+    },
+    {
+        "input": "I need advice on planting a vegetable garden in a small urban space.",
+        "output": "Initial Answer: Urban vegetable gardening requires considering space limitations, sunlight exposure, and suitable plant choices. Container gardening and vertical gardening are effective approaches in small spaces. Next Steps: Provide details about the available space (such as balcony size), sunlight hours, and any specific vegetables you are interested in growing. Also, mention if you have any experience in gardening or if you are a beginner."
+    }
+]
