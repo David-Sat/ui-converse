@@ -10,6 +10,7 @@ def display_ui_from_response(response, message_index, last_message_index):
         display_markdown(data["initial_answer"])
         if "ui_elements" in data:
             for index, element in enumerate(data["ui_elements"]):
+                print(f"Displaying UI element: {element['type']} - {element['label']} - {message_index}_{index}")
                 display_ui_element(element, message_index, index, last_message_index)
     except json.JSONDecodeError:
         display_markdown(response)
@@ -29,7 +30,7 @@ def display_ui_element(element, message_index, index, last_message_index):
 
     if element['type'] == 'Slider':
         value = display_slider(element, label, key)
-    elif element['type'] == 'RadioButton':
+    elif element['type'] == 'RadioButtons':
         value = display_radio_buttons(element, label, key)
     elif element['type'] == 'MultiSelect':
         value = display_multiselect(element, label, key)

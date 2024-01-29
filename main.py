@@ -48,6 +48,8 @@ def main():
     # Initialize session state and OpenAI API key
     initialize_session()
 
+    with st.expander("Debug Info"):
+        st.write(st.session_state.history)
 
     chat_container = st.container()
 
@@ -73,8 +75,6 @@ def main():
     if col1.button("Submit", type="primary"):
         handle_submission()
 
-    with st.expander("Debug Info"):
-        st.write(st.session_state.history)
 
 if __name__ == "__main__":
     main()
