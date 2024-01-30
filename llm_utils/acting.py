@@ -1,13 +1,25 @@
 import json
-from langchain.schema import StrOutputParser, ChatMessage
-from langchain.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
+from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
-from typing import Dict, Any, Callable
+from typing import Any, Dict, List, Callable
 from llm_utils.config_loader import load_few_shot_examples, load_few_shot_json_examples, load_config
 from llm_utils.pydantic_models import Output
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import PromptTemplate
 
+from langchain.callbacks import StdOutCallbackHandler
+from langchain.callbacks.base import BaseCallbackHandler
+
+
+class DebugHandler(BaseCallbackHandler):
+    def __init__(self, initial_text=""):
+        pass
+
+    def on_llm_start(
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any
+    ) -> None:
+        """Print out the prompts."""
+        print(prompts)
 
 
 example_prompt = ChatPromptTemplate.from_messages(
@@ -38,16 +50,17 @@ class Actor:
             partial_variables={"system_prompt": self.system_prompt, "format_instructions": parser.get_format_instructions()},
         )
         
-
         chain = (
             prompt 
             | self.model 
             | parser
         )
 
-        config = {"callbacks": [stream_handler]}
+        handler = DebugHandler()
+        config = {"callbacks": [stream_handler, handler]}
 
         try:
+            #print("Prompt:", prompt)
             validated_data = chain.invoke(input={"message": message}, config=config)
             return json.dumps(validated_data.dict())
         except Exception as e:
