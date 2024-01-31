@@ -7,7 +7,7 @@ def display_ui_from_response(response, message_index, last_message_index):
         data = json.loads(response)
         #print("Parsed JSON:", data)
         display_markdown(data["title"])
-        display_markdown(data["initial_answer"])
+        display_markdown(data["text"])
         if "ui_elements" in data:
             for index, element in enumerate(data["ui_elements"]):
                 display_ui_element(element, message_index, index, last_message_index)

@@ -1,6 +1,5 @@
 import streamlit as st
-from llm_utils.reasoning import Reasoner
-from llm_utils.acting import Actor
+from llm_utils.conversation import Conversation
 
 def get_openai_api_key():
     if "openai_api_key" not in st.session_state:
@@ -17,17 +16,14 @@ def initialize_session():
     
     """Set default values in the session state if not already initialized."""
 
-    if "reasoner" not in st.session_state:
-        st.session_state["reasoner"] = Reasoner(st.session_state.openai_api_key, "gpt-3.5-turbo", streaming=True)
+    if "conversation" not in st.session_state:
+        st.session_state["conversation"] = Conversation(st.session_state.openai_api_key, st.session_state.openai_api_key)
 
-    if "actor" not in st.session_state:
-        st.session_state["actor"] = Actor(st.session_state.openai_api_key, "gpt-3.5-turbo", streaming=True)
 
     if "messages" not in st.session_state:
-        #st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
         st.session_state["messages"] = []
-    if "history" not in st.session_state:
-        st.session_state["history"] = []
+    if "conv_history" not in st.session_state:
+        st.session_state["conv_history"] = []
     if "user_inputs" not in st.session_state:
         st.session_state["user_inputs"] = {}
 

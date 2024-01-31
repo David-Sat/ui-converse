@@ -1,14 +1,22 @@
 [
     {
         "input": "I'm looking for a laptop that's good for both gaming and work.",
-        "output": "Initial Answer: For a laptop suitable for both gaming and work, consider factors like high-performance graphics, a robust processor, sufficient RAM, and a balance between portability and screen size. Next Steps: Refine your query by specifying a preferred budget range, desired screen size (for example, 15-inch for portability or 17-inch for immersive gaming), and any specific software requirements for work."
+        "output": "For a laptop suitable for both gaming and work, consider factors like high-performance graphics, a robust processor, sufficient RAM, and a balance between portability and screen size. ␃ Refine your query by specifying a preferred budget range, desired screen size (for example, 15-inch for portability or 17-inch for immersive gaming), and any specific software requirements for work."
+    },
+    {
+        "input": "I want to buy an electric car",
+        "output": "Buying an electric car is a great choice for environmental sustainability and long-term cost savings. Consider factors like range, charging infrastructure, battery life, and available incentives. ␃ Refine your query by specifying your budget range, preferred car size (compact, sedan, SUV, etc.), desired range on a single charge, and any specific features or preferences you have (such as fast charging capability or specific electric car models you are interested in)."
+    },
+    {
+        "input": "Budget Range: 52284\nDesired Range on a Single Charge: 132\nCar Size: ['Compact']\n",
+        "output": "Based on your provided budget, range and preferred size, a recommended electric car to consider is the Tesla Model 3 Standard Range Plus. It offers a good balance of range, efficiency, and features within your budget. Other notable options include the Chevrolet Bolt EV and the Nissan Leaf, both praised for their reliability and value in the compact EV segment. ␃ Choose one of the 3 models to explore more details. Provide your region for more specific recommendations (North America, Europe, Asia)."
     },
     {
         "input": "What's the best way to learn a new language?",
-        "output": "Initial Answer: Effective language learning combines methods like structured courses, immersion techniques, and practical usage. Next Steps: Specify particular languages of interest, your current proficiency level in these languages, and any specific goals (e.g., conversational fluency, business communication, or travel). Also, indicate your preferred learning style, such as visual, auditory, or kinesthetic."
+        "output": "Effective language learning combines methods like structured courses, immersion techniques, and practical usage. ␃ Specify particular languages of interest, your current proficiency level in these languages, and any specific goals (e.g., conversational fluency, business communication, or travel). Also, indicate your preferred learning style, such as visual, auditory, or kinesthetic."
     },
     {
         "input": "I need advice on planting a vegetable garden in a small urban space.",
-        "output": "Initial Answer: Urban vegetable gardening requires considering space limitations, sunlight exposure, and suitable plant choices. Container gardening and vertical gardening are effective approaches in small spaces. Next Steps: Provide details about the available space (such as balcony size), sunlight hours, and any specific vegetables you are interested in growing. Also, mention if you have any experience in gardening or if you are a beginner."
+        "output": "Urban vegetable gardening requires considering space limitations, sunlight exposure, and suitable plant choices. Container gardening and vertical gardening are effective approaches in small spaces. ␃ Provide details about the available space (such as balcony size), sunlight hours, and any specific vegetables you are interested in growing. Also, mention if you have any experience in gardening or if you are a beginner."
     }
 ]

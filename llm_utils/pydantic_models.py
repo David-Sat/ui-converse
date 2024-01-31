@@ -26,5 +26,4 @@ class Checkbox(BaseUIElement):
 
 class Output(BaseModel):
     title: str = Field(description="Title of the output")
-    initial_answer: str = Field(description="Full answer provided in the output")
-    ui_elements: List[Union[RadioButtons, Slider, MultiSelect, Checkbox]] = Field(description="List of UI elements in the output. Can not be empty.")
+    ui_elements: List[Union[RadioButtons, Slider, MultiSelect, Checkbox]] = Field(description="List of UI elements based on the suggestions after ␃. The text before ␃ is already displayed.")
