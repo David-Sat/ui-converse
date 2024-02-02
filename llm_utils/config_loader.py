@@ -1,3 +1,4 @@
+"""module to load few-shot examples and configuration files."""
 import json
 from pathlib import Path
 
@@ -9,6 +10,7 @@ def load_few_shot_examples(examples_file):
     examples_path = Path(__file__).parent.parent / examples_file
     examples = load_json(examples_path)
     return examples
+
 
 def load_few_shot_json_examples(examples_file):
     """
@@ -38,10 +40,9 @@ def load_json(path):
             return json.load(file)
     except FileNotFoundError:
         print(f"File {path} not found.")
-        exit()
     except json.JSONDecodeError:
         print(f"Error decoding JSON file {path}.")
-        exit()
+    return None
 
 
 def load_config(config_file='configs/config.json'):
