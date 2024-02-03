@@ -1,9 +1,10 @@
 """Module for defining agents that interact with LLMs for conversational and UI responses."""
 from typing import Callable
 import traceback
-from langchain.schema import StrOutputParser, ChatMessage
+from langchain.schema import StrOutputParser
 from langchain.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate, PromptTemplate
 from langchain.output_parsers import PydanticOutputParser
+from langchain_core.messages import HumanMessage, AIMessage
 from pydantic import ValidationError
 from llm_utils.pydantic_models import Output
 from llm_utils.config_loader import load_few_shot_examples, load_config
@@ -43,7 +44,7 @@ class ConversationalAgent(Agent):
         self.few_shot_examples = load_few_shot_examples(
             'configs/reasoning_examples.json')
 
-    def __call__(self, message: ChatMessage, stream_handler: Callable) -> str:
+    def __call__(self, message: HumanMessage, stream_handler: Callable) -> str:
         self.memory.append(message)
 
         few_shot_prompt = FewShotChatMessagePromptTemplate(
@@ -67,7 +68,7 @@ class ConversationalAgent(Agent):
 
         config = {"callbacks": [stream_handler]}
         response = chain.invoke(input={}, config=config)
-        self.memory.append(ChatMessage(role="assistant", content=response))
+        self.memory.append(AIMessage(role="assistant", content=response))
         return response
 
 

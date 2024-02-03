@@ -1,21 +1,12 @@
 """Streamlit app module for interactive chat management and display."""
 from typing import Optional
 import streamlit as st
-from langchain.schema import ChatMessage
-from functools import wraps
+from langchain_core.messages import HumanMessage, AIMessage
 from streamlit_utils.ui_creator import display_ui_from_response
 from streamlit_utils.initialization import initialize_session
 from llm_utils.stream_handler import StreamUntilSpecialTokenHandler
 from llm_utils.conversation import Conversation
 from llm_utils.prompt_assembly import prompt_assembly
-
-
-def show_spinner(func):
-    @wraps(func)
-    def wrapper_function(*args, **kwargs):
-        with st.spinner('Updating models...'):
-            return func(*args, **kwargs)
-    return wrapper_function
 
 
 def get_conversation() -> Optional[Conversation]:
@@ -27,7 +18,7 @@ def handle_submission():
     """Process and submit user input, updating conversation history."""
     user_input = st.session_state.input_text
     user_prompt = prompt_assembly(st.session_state.user_inputs, user_input)
-    user_message = ChatMessage(role="user", content=user_prompt)
+    user_message = HumanMessage(role="user", content=user_prompt)
     st.session_state.messages.append(user_message)
     st.session_state.conv_history.append(user_message)
 
@@ -39,11 +30,11 @@ def handle_submission():
         textual_response, json_response = conversation_instance(
             user_message, stream_handler)
 
-        st.session_state.conv_history.append(ChatMessage(
+        st.session_state.conv_history.append(AIMessage(
             role="assistant", content=textual_response))
         st.session_state.conv_history.append(
-            ChatMessage(role="assistant", content=json_response))
-        st.session_state.messages.append(ChatMessage(
+            AIMessage(role="assistant", content=json_response))
+        st.session_state.messages.append(AIMessage(
             role="assistant", content=json_response))
 
     st.session_state.input_text = ""
