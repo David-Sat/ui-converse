@@ -43,14 +43,8 @@ class Conversation:
         ui_agent_model = self.create_model(
             model_name=model_name_ui, streaming=False)
 
-        print("Old Conversational Agent:",
-              type(self.conversational_agent.get_model()))
-        print("Old UI AGENT:", type(self.ui_agent.get_model()))
         self.conversational_agent.update_model(conv_agent_model)
         self.ui_agent.update_model(ui_agent_model)
-        print("Conversational Agent:", type(
-            self.conversational_agent.get_model()))
-        print("UI AGENT:", type(self.ui_agent.get_model()))
 
     def create_model(self, model_name: str, streaming=False):
         """Create a model instance based on model name and streaming capability."""
