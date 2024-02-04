@@ -1,7 +1,7 @@
 # UIConverse
 UIConverse transforms the way users interact with LLMs by introducing a user-friendly interface that eliminates the need for complex typing and prompt crafting. This innovative system leverages a dual-agent architecture to offer initial responses and generate on-the-fly UIs, such as sliders and checkboxes, for intuitive user refinement. It addresses common issues like inefficient interactions and underutilization of LLM capabilities making LLMs more accessible and tailored to individual user needs.
 
-UIConverse is currently deployed [here](https://ui-converse.streamlit.app/).
+UIConverse is currently deployed [here](https://uiconverse.streamlit.app/).
 
 ## Problem Statement
 ### Challenges with Current LLM Interactions
