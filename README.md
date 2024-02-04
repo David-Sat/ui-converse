@@ -1,6 +1,7 @@
 # UIConverse
 UIConverse transforms the way users interact with LLMs by introducing a user-friendly interface that eliminates the need for complex typing and prompt crafting. This innovative system leverages a dual-agent architecture to offer initial responses and generate on-the-fly UIs, such as sliders and checkboxes, for intuitive user refinement. It addresses common issues like inefficient interactions and underutilization of LLM capabilities making LLMs more accessible and tailored to individual user needs.
 
+UIConverse is currently deployed [here](https://ui-converse.streamlit.app/).
 
 ## Problem Statement
 ### Challenges with Current LLM Interactions
@@ -30,6 +31,7 @@ UIConverse is designed to transform how users interact with LLMs. This system em
 - **Prompt Conversion and Continuation:** User inputs from the UI are converted into prompts and sent back to the system, allowing the conversation to continue seamlessly until the user's goal is achieved.
 
 Conversation Flow Diagram
+
 ![Conversation Flow](https://github.com/David-Sat/ui-converse/blob/main/conversation_flow.drawio.png)
 
 ### Architectural Highlights
@@ -40,6 +42,7 @@ UIConverse comprises two main components:
 - **UIAgent:** Takes responses from the ConversationalAgent along with instructions for UI creation. It outputs structured JSON for the UI without retaining conversation memory.
 
 UML Class Diagram
+
 ![UML Class Diagram](https://github.com/David-Sat/ui-converse/blob/main/class_diagram.drawio.png)
 
 ### Future Directions
