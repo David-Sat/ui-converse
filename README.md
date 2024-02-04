@@ -30,7 +30,7 @@ UIConverse is designed to transform how users interact with LLMs. This system em
 - **Prompt Conversion and Continuation:** User inputs from the UI are converted into prompts and sent back to the system, allowing the conversation to continue seamlessly until the user's goal is achieved.
 
 Conversation Flow Diagram
-(Placeholder for conversation flow diagram image/link)
+![Conversation Flow](https://github.com/David-Sat/ui-converse/blob/main/conversation_flow.drawio.png)
 
 ### Architectural Highlights
 
@@ -40,7 +40,7 @@ UIConverse comprises two main components:
 - **UIAgent:** Takes responses from the ConversationalAgent along with instructions for UI creation. It outputs structured JSON for the UI without retaining conversation memory.
 
 UML Class Diagram
-![UML Class Diagram](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![UML Class Diagram](https://github.com/David-Sat/ui-converse/blob/main/class_diagram.drawio.png)
 
 ### Future Directions
 
