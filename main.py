@@ -102,6 +102,7 @@ def main():
 
     if col2.button("Restart Session"):
         st.session_state.messages = []
+        st.session_state.user_inputs = {}
         st.rerun()
 
     if col1.button("Submit", type="primary"):
