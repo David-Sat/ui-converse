@@ -78,8 +78,10 @@ def main():
     initialize_session()
     handle_sidebar()
 
-    with st.expander("Debug Info"):
-        st.write(st.session_state.conv_history)
+    # with st.expander("Debug Info"):
+    # st.write(st.session_state.conv_history)
+
+    st.title("UIConverse")
 
     chat_container = st.container()
 
@@ -91,9 +93,10 @@ def main():
         else:
             chat_container.chat_message(msg.role).write(msg.content)
 
-    st.session_state.input_text = chat_container.text_input(
-        "Your prompt",
-        value=st.session_state.input_text)
+    if len(st.session_state.messages) == 0:
+        st.session_state.input_text = chat_container.text_input(
+            "Type in whatever, we'll take it from here.",
+            value=st.session_state.input_text)
 
     col1, col2 = chat_container.columns(2)
 
