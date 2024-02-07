@@ -30,6 +30,11 @@ UIConverse is designed to transform how users interact with LLMs. This system em
 - **Custom UI Interaction:** Users interact with the UI — featuring radio buttons, sliders, multiselects, checkboxes, etc. — instead of typing responses. This UI simplifies the process of refining their request.
 - **Prompt Conversion and Continuation:** User inputs from the UI are converted into prompts and sent back to the system, allowing the conversation to continue seamlessly until the user's goal is achieved.
 
+
+Sequence Diagram
+
+![Sequence Diagram](https://github.com/David-Sat/ui-converse/blob/main/sequence_diagram.png)
+
 Conversation Flow Diagram
 
 ![Conversation Flow](https://github.com/David-Sat/ui-converse/blob/main/conversation_flow.drawio.png)
